@@ -66,7 +66,7 @@ lib$(LANGUAGE_NAME).a: $(OBJS)
 lib$(LANGUAGE_NAME).$(SOEXT): $(OBJS)
 	$(CC) $(LDFLAGS) $(LINKSHARED) $^ $(LDLIBS) -o $@
 ifneq ($(STRIP),)
-	$(STRIP) $@
+	$(STRIP) -x $@
 endif
 
 $(LANGUAGE_NAME).pc: bindings/c/$(LANGUAGE_NAME).pc.in
